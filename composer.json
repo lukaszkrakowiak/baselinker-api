@@ -1,0 +1,19 @@
+{
+    "name": "lukaszkrakowiak/baselinerk-api",
+    "description": "Connect baselinker API",
+    "type": "library",
+    "require": {
+        "php": ">= 7.3.0"
+    },
+    "authors": [{
+        "name": "Łukasz Krakowiak",
+        "email": "lukasz94krakowiak@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Baselinker\\": "src/Baselinker/"
+        }
+    },
+    "license": "proprietary"
+}
