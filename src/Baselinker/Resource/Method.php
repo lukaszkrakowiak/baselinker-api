@@ -21,7 +21,6 @@ class Method implements MethodInterface
 
     public function parameter($method, $param):MethodInterface{
         $this->parameter = [
-            "token" => $this->token,
             "method" => $method,
             "parameters" => json_encode($param),
         ];
@@ -38,8 +37,9 @@ class Method implements MethodInterface
         $query = http_build_query($this->parameter);
         $contextData = array(
             'method' => 'POST',
-            'header' => "Content-Type: application/x-www-form-urlencoded\r\n" .
-                "Content-Length: " . strlen($query) . "\r\n",
+            'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+                "Content-Length: ".strlen($query)."\r\n".
+                "X-BLToken: ".$this-token,
             'content' => $query
         );
 
