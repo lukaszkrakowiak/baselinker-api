@@ -6,7 +6,16 @@ use Baselinker\Interfaces\MethodInterface;
 use Baselinker\Interfaces\TokenInterface;
 
 class Method implements MethodInterface
-{    
+{
+    const METHOD_ADD_INVENTORY_PRICE_GROUP = "addInventoryPriceGroup";
+    const METHOD_DELETE_INVENTORY_PRICE_GROUP = "deleteInventoryPriceGroup";
+    const METHOD_GET_INVENTORY_PRICE_GROUPS = 'getInventoryPriceGroups';
+    const METHOD_ADD_INVENTORY_WAREHOUSE = 'addInventoryWarehouse';
+    const METHOD_DELETE_INVENTORY_WAREHOUSE = 'deleteInventoryWarehouse';
+    /**
+     * Todo: fill up this const value
+     */
+
     /**
      * parameter
      *
@@ -39,7 +48,7 @@ class Method implements MethodInterface
             'method' => 'POST',
             'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
                 "Content-Length: ".strlen($query)."\r\n".
-                "X-BLToken: ".$this-token,
+                "X-BLToken: ".$this->token,
             'content' => $query
         );
 
